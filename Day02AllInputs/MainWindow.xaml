@@ -1,0 +1,50 @@
+﻿<Window x:Class="Day02AllInputs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Day02AllInputs"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="500">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <Label Content="Name:" Target="{Binding ElementName=personName}" />
+                <TextBox Name="personName" Width="200"/>
+            </StackPanel>
+            <StackPanel  Margin="10" Orientation="Horizontal" >
+                <Label FontWeight="Bold">Age: </Label>
+                <RadioButton IsChecked="True" GroupName="age" Name="Btn1">below 18 </RadioButton>
+                <RadioButton GroupName="age" Name="Btn2">18-35 </RadioButton>
+                <RadioButton GroupName="age" Name="Btn3">36 and up </RadioButton>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal" >
+                <Label>Pets:</Label>
+                <CheckBox Name="chkCat" IsChecked="{Binding IsChecked}">cat</CheckBox>
+                <CheckBox Name="chkDog" IsChecked="{Binding IsChecked}">dog</CheckBox>
+                <CheckBox Name="chkOther" IsChecked="{Binding IsChecked}">other</CheckBox>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <Label>Continent of Residence:</Label>
+                <ComboBox Name="cboPickOne" SelectedValuePath="Content">
+                    <ComboBoxItem>North America</ComboBoxItem>
+                    <ComboBoxItem>South America</ComboBoxItem>
+                    <ComboBoxItem>Europe</ComboBoxItem>
+                    <ComboBoxItem>Asia</ComboBoxItem>
+                    <ComboBoxItem>Australia</ComboBoxItem>
+                    <ComboBoxItem>Africa</ComboBoxItem>
+                    <ComboBoxItem>Antarctica</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <TextBlock x:Name = "currentTempTextBlock" Text = "Preferred temp C:" Margin = "10" />
+                <Slider x:Name = "Slider" Minimum = "15" Maximum = "35" TickFrequency = "1" 
+                TickPlacement = "BottomRight" ValueChanged = "Slider_ValueChanged" Margin = "10">
+                </Slider>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="10">
+                <Button FontWeight="Bold" Width="200" Click="RegisterOnClick">Register Me!</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

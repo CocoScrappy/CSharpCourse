@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempConvSimple", "TempConvSimple.csproj", "{38A55F1B-F37B-4186-8658-C1EB2B27F85F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38A55F1B-F37B-4186-8658-C1EB2B27F85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A55F1B-F37B-4186-8658-C1EB2B27F85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A55F1B-F37B-4186-8658-C1EB2B27F85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A55F1B-F37B-4186-8658-C1EB2B27F85F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1B998D6-2C17-4B6C-93B5-BC0326B15DFA}
+	EndGlobalSection
+EndGlobal

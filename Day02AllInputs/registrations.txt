@@ -1,0 +1,9 @@
+Dmitry;18-35;,dog,other,;North America;Preferred temp C: 23;
+Rami;18-35;cat,dog,;North America;20;
+Peppa;18-35;,dog,;Asia;17;
+Peppa Pig;18-35;,dog,;Asia;17;
+;18-35;,,other,;Australia;18;
+Dmitry;below 18;cat,,;South America;17;
+;18-35;,,other,;Europe;17;
+abc;;,,;;15;
+Gregory;36 and up;,dog,;Europe;20;
