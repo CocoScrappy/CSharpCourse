@@ -44,21 +44,29 @@ namespace Day04ListGridViewPeople
 
         private void BtnDeletePerson_Click(object sender, RoutedEventArgs e)
         {
-            //List<Person> selected = peopleList.
-            //peopleList.Remove(selected);
-            //LvPeople.Items.Refresh();// tell Listview data has changed
+            Person currSelPer = LvPeople.SelectedItem as Person;
+            if (currSelPer == null) return;
+            if (MessageBox.Show("Are you sure you want to delete record?", "Please confirm", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                peopleList.Remove(currSelPer);
+                LvPeople.Items.Refresh();// tell Listview data has changed
+
+                ResetFields();
+            }
+
         }
 
         private void BtnUpdatePerson_Click(object sender, RoutedEventArgs e)
         {
             Person currSelPer = LvPeople.SelectedItem as Person;
-            if (currSelPer == null) ResetFields();
-
+            if (currSelPer == null) return;
+            if (!ArePersonInputsValid()) return;
             string name = TbxName.Text;
-            int.TryParse(TbxAge.Text, out int age);
+            int.TryParse(TbxAge.Text, out int age); // okay: no need to validate again
             currSelPer.Name = name;
             currSelPer.Age = age;
-            LvPeople.Items
+            LvPeople.Items.Refresh(); // tell ListView data has changed
+            ResetFields();
         }
 
         private bool ArePersonInputsValid()
@@ -85,15 +93,43 @@ namespace Day04ListGridViewPeople
             TbxAge.Text = "";
         }
 
-        private void LvPeople_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
+        private void LvPeople_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Person currSelPer = LvPeople.SelectedItem as Person;
-            if (currSelPer == null) ResetFields();
+            if (currSelPer == null)
+            {
+                ResetFields();
+            }
             else
             {
                 TbxName.Text = currSelPer.Name;
                 TbxAge.Text = currSelPer.Age.ToString();
             }
+        }
+
+        private void MiExport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LvPeople_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // user clicked on a non-item - deselect all
+            LvPeople.UnselectAll();
+        }
+
+        private void DeleteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            Person currSelPer = LvPeople.SelectedItem as Person;
+            if (currSelPer.Name!=null)
+            {
+                e.CanExecute = true;
+            } else
+            {
+                e.CanExecute = true;
+            }
+
+
         }
     }
 }
